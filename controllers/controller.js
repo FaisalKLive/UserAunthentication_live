@@ -84,7 +84,7 @@ class Controller{
             }
             else{
 
-                res.redirect('/home')
+                res.redirect('/')
             }
 
         })

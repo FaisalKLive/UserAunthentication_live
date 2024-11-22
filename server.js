@@ -8,6 +8,8 @@ import MongoStore from 'connect-mongo'
 
 import session from 'express-session'
 
+import { MemoryStore } from 'express-session'
+
 import isValidUser from './middlewares/validate.js'
 
 import router from './routes/routes.js'
@@ -34,7 +36,11 @@ app.use(session({
     secret : 'A secret Key to sign the cookie',
     saveUninitialized : false ,
     resave : false,
-    store : session_store
+    store : session_store,
+    cookie: { maxAge: 86400000 },
+    store: new MemoryStore({
+      checkPeriod: 86400000 // prune expired entries every 24h
+    })
 }))
 
 app.set('view-engine','ejs')

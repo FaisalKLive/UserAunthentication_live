@@ -14,6 +14,8 @@ import router from './routes/routes.js'
 
 import {} from 'dotenv/config'
 
+import { MemoryStore } from 'express-session'
+
 const uri = process.env.MONGO_URI
 
 //const uri = "mongodb+srv://FullStack:Conestoga@cluster0.1ua8had.mongodb.net/CostCoUserz?retryWrites=true&w=majority&appName=Cluster0";
@@ -34,7 +36,11 @@ app.use(session({
     secret : 'A secret Key to sign the cookie',
     saveUninitialized : false ,
     resave : false,
-    store : session_store
+    store : session_store,
+    cookie: { maxAge: 86400000 },
+    store: new MemoryStore({
+      checkPeriod: 86400000 // prune expired entries every 24h
+    })
 }))
 
 app.set('view-engine','ejs')

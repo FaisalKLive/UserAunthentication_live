@@ -5,7 +5,7 @@ const isValidUser = (req,res,next)=>{
     }
     else{
 
-        res.redirect('/home')
+        res.redirect('/')
     }
 
 }

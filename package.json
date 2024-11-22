@@ -19,7 +19,11 @@
     "ejs": "^3.1.9",
     "express": "^4.18.3",
     "express-session": "^1.18.0",
+<<<<<<< HEAD
     "memorystore": "^1.6.7",
+=======
+     "memorystore": "^1.6.7",
+>>>>>>> 14301aa9f6431eaa7eb98f921c0cac903c179108
     "mongoose": "^8.2.1"
   }
 }

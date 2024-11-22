@@ -8,6 +8,8 @@ import MongoStore from 'connect-mongo'
 
 import session from 'express-session'
 
+import { MemoryStore } from 'express-session'
+
 import isValidUser from './middlewares/validate.js'
 
 import router from './routes/routes.js'
